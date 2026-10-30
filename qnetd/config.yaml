@@ -1,0 +1,22 @@
+name: Corosync QNetd
+version: "1.0.0"
+slug: corosync_qnetd
+description: >-
+  The Proxmox VE QDevice arbiter (corosync-qnetd), so a Proxmox cluster with an
+  even number of nodes keeps quorum when half of them are down.
+url: https://github.com/rhuanbarreto/ha-corosync-qnetd
+arch:
+  - aarch64
+  - amd64
+startup: services
+boot: auto
+init: false
+# QNetd listens on TCP 5403 for every cluster node; the cluster dials the host's
+# own address, so the add-on shares the host's network.
+host_network: true
+options:
+  ssh_authorized_key: ""
+  ssh_port: 2222
+schema:
+  ssh_authorized_key: str?
+  ssh_port: port

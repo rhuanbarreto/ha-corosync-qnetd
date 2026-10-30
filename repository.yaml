@@ -1,0 +1,3 @@
+name: Corosync QNetd for Proxmox
+url: https://github.com/rhuanbarreto/ha-corosync-qnetd
+maintainer: Rhuan Barreto
